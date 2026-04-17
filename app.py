@@ -304,7 +304,7 @@ def kpi_card(label, value, icon, subtitle):
 
 @st.cache_data
 def load_data():
-    postings = pd.read_csv("data/postings.csv")
+    postings = pd.read_csv("data/postings_sample.csv")
     salaries = pd.read_csv("data/salaries.csv")
     job_skills = pd.read_csv("data/job_skills.csv")
     skills = pd.read_csv("data/skills.csv")
