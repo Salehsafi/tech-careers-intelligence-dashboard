@@ -42,18 +42,6 @@ def load_css():
         }
     }
 
-    @keyframes glowPulse {
-        0% {
-            box-shadow: 0 0 0 rgba(59,130,246,0.0);
-        }
-        50% {
-            box-shadow: 0 0 30px rgba(59,130,246,0.16);
-        }
-        100% {
-            box-shadow: 0 0 0 rgba(59,130,246,0.0);
-        }
-    }
-
     @keyframes shimmer {
         0% {
             background-position: -200% 0;
@@ -155,6 +143,7 @@ def load_css():
         animation: fadeUp 0.7s ease forwards;
         opacity: 0;
         margin-bottom: 16px;
+        height: 100%;
     }
 
     .kpi-card:hover {
@@ -272,6 +261,193 @@ def load_css():
         overflow: hidden;
         border: 1px solid rgba(148,163,184,0.2);
         box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+    }
+
+    /* ---------- Responsive tweaks ---------- */
+
+    @media (max-width: 1200px) {
+        .block-container {
+            max-width: 94% !important;
+        }
+
+        .hero-title {
+            font-size: 42px !important;
+        }
+
+        .hero-sub {
+            font-size: 16px !important;
+        }
+
+        .kpi-value {
+            font-size: 24px !important;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .block-container {
+            max-width: 96% !important;
+            padding-top: 1.2rem !important;
+            padding-bottom: 1.2rem !important;
+        }
+
+        .hero-wrap {
+            padding: 24px 20px !important;
+            border-radius: 22px !important;
+        }
+
+        .hero-title {
+            font-size: 34px !important;
+            line-height: 1.1 !important;
+        }
+
+        .hero-sub {
+            font-size: 15px !important;
+            max-width: 100% !important;
+        }
+
+        .hero-pill {
+            font-size: 12px !important;
+            padding: 7px 12px !important;
+        }
+
+        .kpi-card {
+            padding: 16px !important;
+            border-radius: 18px !important;
+        }
+
+        .kpi-label {
+            font-size: 13px !important;
+        }
+
+        .kpi-value {
+            font-size: 22px !important;
+        }
+
+        .kpi-sub {
+            font-size: 12px !important;
+        }
+
+        .section-card {
+            padding: 18px !important;
+            border-radius: 18px !important;
+        }
+
+        .section-title-dark {
+            font-size: 20px !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .block-container {
+            max-width: 100% !important;
+            padding-left: 0.7rem !important;
+            padding-right: 0.7rem !important;
+        }
+
+        .hero-wrap {
+            padding: 18px 16px !important;
+            margin-bottom: 16px !important;
+        }
+
+        .hero-badge {
+            font-size: 11px !important;
+            padding: 6px 10px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .hero-title {
+            font-size: 28px !important;
+            letter-spacing: -0.5px !important;
+        }
+
+        .hero-sub {
+            font-size: 14px !important;
+            line-height: 1.5 !important;
+            margin-bottom: 14px !important;
+        }
+
+        .hero-pills {
+            gap: 8px !important;
+        }
+
+        .hero-pill {
+            font-size: 11px !important;
+            padding: 6px 10px !important;
+        }
+
+        .kpi-card {
+            padding: 14px !important;
+            margin-bottom: 12px !important;
+        }
+
+        .kpi-top {
+            margin-bottom: 8px !important;
+        }
+
+        .kpi-value {
+            font-size: 20px !important;
+        }
+
+        .kpi-sub {
+            font-size: 11px !important;
+        }
+
+        .section-card {
+            padding: 14px !important;
+            margin-bottom: 14px !important;
+        }
+
+        .section-title-dark {
+            font-size: 18px !important;
+        }
+
+        .insight-box {
+            font-size: 13px !important;
+            padding: 12px 14px !important;
+        }
+
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 6px !important;
+            overflow-x: auto !important;
+            flex-wrap: nowrap !important;
+            scrollbar-width: none;
+        }
+
+        .stTabs [data-baseweb="tab-list"]::-webkit-scrollbar {
+            display: none;
+        }
+
+        .stTabs [data-baseweb="tab"] {
+            padding: 8px 12px !important;
+            font-size: 13px !important;
+            white-space: nowrap !important;
+        }
+
+        [data-testid="stDataFrame"] {
+            font-size: 12px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-title {
+            font-size: 24px !important;
+        }
+
+        .hero-sub {
+            font-size: 13px !important;
+        }
+
+        .kpi-value {
+            font-size: 18px !important;
+        }
+
+        .kpi-label {
+            font-size: 12px !important;
+        }
+
+        .section-title-dark {
+            font-size: 17px !important;
+        }
     }
 
     header, #MainMenu, footer {
@@ -589,20 +765,20 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-c1, c2, c3 = st.columns(3)
-with c1:
+kpi_cols_top = st.columns([1, 1, 1], gap="small")
+with kpi_cols_top[0]:
     st.markdown(kpi_card("Total Jobs", f"{total_jobs:,}", "📌", "Active filtered listings"), unsafe_allow_html=True)
-with c2:
+with kpi_cols_top[1]:
     st.markdown(kpi_card("Avg Salary", f"${avg_salary:,.0f}" if pd.notnull(avg_salary) else "N/A", "💰", "Average normalized salary"), unsafe_allow_html=True)
-with c3:
+with kpi_cols_top[2]:
     st.markdown(kpi_card("Remote Jobs %", f"{remote_pct:.1f}%", "🌍", "Share of remote-friendly roles"), unsafe_allow_html=True)
 
-c4, c5, c6 = st.columns(3)
-with c4:
+kpi_cols_bottom = st.columns([1, 1, 1], gap="small")
+with kpi_cols_bottom[0]:
     st.markdown(kpi_card("Top Job Title", short_text(top_job_title, 16), "🧠", "Most common role right now"), unsafe_allow_html=True)
-with c5:
+with kpi_cols_bottom[1]:
     st.markdown(kpi_card("Top Skill", short_text(top_skill, 16), "🛠️", "Most requested skill"), unsafe_allow_html=True)
-with c6:
+with kpi_cols_bottom[2]:
     st.markdown(kpi_card("Top Industry", short_text(top_industry, 16), "🏢", "Leading industry segment"), unsafe_allow_html=True)
 
 tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
@@ -618,7 +794,7 @@ tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
 # Tab 1: Overview
 # -----------------------------
 with tab1:
-    col1, col2 = st.columns([1.2, 1])
+    col1, col2 = st.columns([1.2, 1], gap="medium")
 
     with col1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -639,7 +815,8 @@ with tab1:
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
             xaxis_title="Openings",
-            yaxis_title=""
+            yaxis_title="",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_titles, use_container_width=True)
         st.markdown(
@@ -666,7 +843,8 @@ with tab1:
             height=460,
             margin=dict(l=20, r=20, t=20, b=20),
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_work, use_container_width=True)
         st.markdown(
@@ -679,7 +857,7 @@ with tab1:
 # Tab 2: Salary Insights
 # -----------------------------
 with tab2:
-    col1, col2 = st.columns([1.15, 1])
+    col1, col2 = st.columns([1.15, 1], gap="medium")
 
     with col1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -700,7 +878,8 @@ with tab2:
             xaxis_title="Average Salary (USD)",
             yaxis_title="",
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_salary, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -722,7 +901,8 @@ with tab2:
             xaxis_title="Salary (USD)",
             yaxis_title="Count",
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_hist, use_container_width=True)
 
@@ -737,7 +917,7 @@ with tab2:
 # Tab 3: Skills Demand
 # -----------------------------
 with tab3:
-    col1, col2 = st.columns([1.15, 1])
+    col1, col2 = st.columns([1.15, 1], gap="medium")
 
     with col1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -758,7 +938,8 @@ with tab3:
             xaxis_title="Mentions",
             yaxis_title="",
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_skills, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -783,7 +964,7 @@ with tab3:
 # Tab 4: Industries
 # -----------------------------
 with tab4:
-    col1, col2 = st.columns([1, 1])
+    col1, col2 = st.columns([1, 1], gap="medium")
 
     with col1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -804,7 +985,8 @@ with tab4:
             xaxis_title="Job Count",
             yaxis_title="",
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_ind, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -828,7 +1010,8 @@ with tab4:
             xaxis_title="Average Salary (USD)",
             yaxis_title="",
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_ind_salary, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -837,7 +1020,7 @@ with tab4:
 # Tab 5: Companies & Benefits
 # -----------------------------
 with tab5:
-    col1, col2 = st.columns([1.1, 1])
+    col1, col2 = st.columns([1.1, 1], gap="medium")
 
     with col1:
         st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -858,7 +1041,8 @@ with tab5:
             xaxis_title="Openings",
             yaxis_title="",
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_comp, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
@@ -882,7 +1066,8 @@ with tab5:
             xaxis_title="Frequency",
             yaxis_title="",
             paper_bgcolor="rgba(0,0,0,0)",
-            plot_bgcolor="rgba(0,0,0,0)"
+            plot_bgcolor="rgba(0,0,0,0)",
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
         )
         st.plotly_chart(fig_benefits, use_container_width=True)
         st.markdown('</div>', unsafe_allow_html=True)
