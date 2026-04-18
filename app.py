@@ -265,191 +265,190 @@ def load_css():
 
     /* ---------- Responsive tweaks ---------- */
 
-    @media (max-width: 1200px) {
-        .block-container {
-            max-width: 94% !important;
-        }
-
-        .hero-title {
-            font-size: 42px !important;
-        }
-
-        .hero-sub {
-            font-size: 16px !important;
-        }
-
-        .kpi-value {
-            font-size: 24px !important;
-        }
+@media (max-width: 1200px) {
+    .block-container {
+        max-width: 94% !important;
     }
 
-    @media (max-width: 992px) {
-        .block-container {
-            max-width: 96% !important;
-            padding-top: 1.2rem !important;
-            padding-bottom: 1.2rem !important;
-        }
-
-        .hero-wrap {
-            padding: 24px 20px !important;
-            border-radius: 22px !important;
-        }
-
-        .hero-title {
-            font-size: 34px !important;
-            line-height: 1.1 !important;
-        }
-
-        .hero-sub {
-            font-size: 15px !important;
-            max-width: 100% !important;
-        }
-
-        .hero-pill {
-            font-size: 12px !important;
-            padding: 7px 12px !important;
-        }
-
-        .kpi-card {
-            padding: 16px !important;
-            border-radius: 18px !important;
-        }
-
-        .kpi-label {
-            font-size: 13px !important;
-        }
-
-        .kpi-value {
-            font-size: 22px !important;
-        }
-
-        .kpi-sub {
-            font-size: 12px !important;
-        }
-
-        .section-card {
-            padding: 18px !important;
-            border-radius: 18px !important;
-        }
-
-        .section-title-dark {
-            font-size: 20px !important;
-        }
+    .hero-title {
+        font-size: 42px !important;
     }
 
-    @media (max-width: 768px) {
-        .block-container {
-            max-width: 100% !important;
-            padding-left: 0.7rem !important;
-            padding-right: 0.7rem !important;
-        }
-
-        .hero-wrap {
-            padding: 18px 16px !important;
-            margin-bottom: 16px !important;
-        }
-
-        .hero-badge {
-            font-size: 11px !important;
-            padding: 6px 10px !important;
-            margin-bottom: 12px !important;
-        }
-
-        .hero-title {
-            font-size: 28px !important;
-            letter-spacing: -0.5px !important;
-        }
-
-        .hero-sub {
-            font-size: 14px !important;
-            line-height: 1.5 !important;
-            margin-bottom: 14px !important;
-        }
-
-        .hero-pills {
-            gap: 8px !important;
-        }
-
-        .hero-pill {
-            font-size: 11px !important;
-            padding: 6px 10px !important;
-        }
-
-        .kpi-card {
-            padding: 14px !important;
-            margin-bottom: 12px !important;
-        }
-
-        .kpi-top {
-            margin-bottom: 8px !important;
-        }
-
-        .kpi-value {
-            font-size: 20px !important;
-        }
-
-        .kpi-sub {
-            font-size: 11px !important;
-        }
-
-        .section-card {
-            padding: 14px !important;
-            margin-bottom: 14px !important;
-        }
-
-        .section-title-dark {
-            font-size: 18px !important;
-        }
-
-        .insight-box {
-            font-size: 13px !important;
-            padding: 12px 14px !important;
-        }
-
-        .stTabs [data-baseweb="tab-list"] {
-            gap: 6px !important;
-            overflow-x: auto !important;
-            flex-wrap: nowrap !important;
-            scrollbar-width: none;
-        }
-
-        .stTabs [data-baseweb="tab-list"]::-webkit-scrollbar {
-            display: none;
-        }
-
-        .stTabs [data-baseweb="tab"] {
-            padding: 8px 12px !important;
-            font-size: 13px !important;
-            white-space: nowrap !important;
-        }
-
-        [data-testid="stDataFrame"] {
-            font-size: 12px !important;
-        }
+    .hero-sub {
+        font-size: 16px !important;
     }
 
-    @media (max-width: 480px) {
-        .hero-title {
-            font-size: 24px !important;
-        }
+    .kpi-value {
+        font-size: 24px !important;
+    }
+}
 
-        .hero-sub {
-            font-size: 13px !important;
-        }
-
-        .kpi-value {
-            font-size: 18px !important;
-        }
-
-        .kpi-label {
-            font-size: 12px !important;
-        }
-
-        .section-title-dark {
-            font-size: 17px !important;
-        }
+@media (max-width: 992px) {
+    .block-container {
+        max-width: 96% !important;
+        padding-top: 1.2rem !important;
+        padding-bottom: 1.2rem !important;
     }
 
+    .hero-wrap {
+        padding: 24px 20px !important;
+        border-radius: 22px !important;
+    }
+
+    .hero-title {
+        font-size: 34px !important;
+        line-height: 1.1 !important;
+    }
+
+    .hero-sub {
+        font-size: 15px !important;
+        max-width: 100% !important;
+    }
+
+    .hero-pill {
+        font-size: 12px !important;
+        padding: 7px 12px !important;
+    }
+
+    .kpi-card {
+        padding: 16px !important;
+        border-radius: 18px !important;
+    }
+
+    .kpi-label {
+        font-size: 13px !important;
+    }
+
+    .kpi-value {
+        font-size: 22px !important;
+    }
+
+    .kpi-sub {
+        font-size: 12px !important;
+    }
+
+    .section-card {
+        padding: 18px !important;
+        border-radius: 18px !important;
+    }
+
+    .section-title-dark {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .block-container {
+        max-width: 100% !important;
+        padding-left: 0.7rem !important;
+        padding-right: 0.7rem !important;
+    }
+
+    .hero-wrap {
+        padding: 18px 16px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .hero-badge {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .hero-title {
+        font-size: 28px !important;
+        letter-spacing: -0.5px !important;
+    }
+
+    .hero-sub {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .hero-pills {
+        gap: 8px !important;
+    }
+
+    .hero-pill {
+        font-size: 11px !important;
+        padding: 6px 10px !important;
+    }
+
+    .kpi-card {
+        padding: 14px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .kpi-top {
+        margin-bottom: 8px !important;
+    }
+
+    .kpi-value {
+        font-size: 20px !important;
+    }
+
+    .kpi-sub {
+        font-size: 11px !important;
+    }
+
+    .section-card {
+        padding: 14px !important;
+        margin-bottom: 14px !important;
+    }
+
+    .section-title-dark {
+        font-size: 18px !important;
+    }
+
+    .insight-box {
+        font-size: 13px !important;
+        padding: 12px 14px !important;
+    }
+
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 6px !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        scrollbar-width: none !important;
+    }
+
+    .stTabs [data-baseweb="tab-list"]::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+    }
+
+    [data-testid="stDataFrame"] {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 24px !important;
+    }
+
+    .hero-sub {
+        font-size: 13px !important;
+    }
+
+    .kpi-value {
+        font-size: 18px !important;
+    }
+
+    .kpi-label {
+        font-size: 12px !important;
+    }
+
+    .section-title-dark {
+        font-size: 17px !important;
+    }
+}
     header, #MainMenu, footer {
         visibility: hidden;
     }
